@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: 1000
+---
+spring:
+  profiles: 1000
+server:
+  port: 1000
+eureka:
+  instance:
+    hostname: eureka1.cn
+  client:
+    service-url:
+      defaultZone: http://eureka2.cn:1200/eureka
+---
+spring:
+  profiles: 1200
+server:
+  port: 1200
+eureka:
+  instance:
+    hostname: eureka2.cn
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka1.cn:1000/eureka

@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.cn:1000/eureka,http://eureka2.cn:1200/eureka
+spring:
+  application:
+    name: payment-service
+  profiles:
+    active: 3000
+---
+spring:
+  profiles: 3000
+server:
+  port: 3000
+---
+spring:
+  profiles: 3001
+server:
+  port: 3001
