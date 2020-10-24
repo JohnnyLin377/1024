@@ -13,6 +13,9 @@
         <module>commons</module>
         <module>order-service</module>
         <module>eureka-service</module>
+        <module>gateway-service</module>
+        <module>config-service</module>
+        <module>config-client-service</module>
     </modules>
     <dependencies>
         <dependency>

@@ -1,0 +1,15 @@
+package config.client.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+    @Value("${username}")
+    String username;
+    @GetMapping("/test")
+    public String test1(){
+        return username;
+    }
+}

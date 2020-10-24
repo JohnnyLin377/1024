@@ -1,0 +1,19 @@
+server:
+  port: 1600
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: order-router
+          uri: lb://order-service
+          predicates:
+            - Path=/orderManager/**
+            - After:
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/api
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.cn:1000/eureka,http://eureka2.cn:1200/eureka

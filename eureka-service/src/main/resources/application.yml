@@ -25,3 +25,5 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://eureka1.cn:1000/eureka
+  server:
+    enable-self-preservation: false

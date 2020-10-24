@@ -1,0 +1,27 @@
+#server:
+#  port: 6100
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.cn:1000/eureka,http://eureka2.cn:1200/eureka
+spring:
+  rabbitmq:
+    host: johnyu.cn
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    config:
+      discovery:
+        service-id: config-service
+        enabled: true
+      name: config
+      profile: dev
+  application:
+    name: config-client-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

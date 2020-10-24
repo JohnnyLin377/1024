@@ -1,0 +1,28 @@
+server:
+  port: 1800
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/johnyu666/connfig-server.git
+  rabbitmq:
+    host: johnyu.cn
+    port: 5672
+    username: admin
+    password: admin
+#        native:
+#          search-locations: classpath:/config
+#  profiles:
+#    active: native
+  application:
+    name: config-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.cn:1000/eureka,http://eureka2.cn:1200/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
